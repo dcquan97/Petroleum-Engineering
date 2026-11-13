@@ -1,357 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Petroleum Engineering at UD-DUT — University of Danang, University of Science and Technology</title>
-<meta name="description" content="Petroleum Engineering at UD-DUT — process/downstream engineering, refining & gas processing, equipment design, simulation, safety, integrity, hydrogen and sustainable energy.">
-<meta name="theme-color" content="#0f766e">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛢️</text></svg>">
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Petroleum Engineering at UD–DUT (demo)</title>
+<meta name="description" content="Demo microsite: process, equipment and operations-focused petroleum engineering at the University of Da Nang – University of Science and Technology.">
+<link rel="canonical" href="https://en.dut.udn.vn/petroleum-engineering/">
 <style>
-  :root {
-    --teal: #0f766e;
-    --teal-dark: #0b5d57;
-    --ink: #0f172a;
-    --muted: #475569;
-    --light: #f8fafc;
-    --border: #e2e8f0;
-    --accent: #f59e0b;
-    --white: #fff;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { font-family:'Segoe UI', system-ui, -apple-system, sans-serif; color:var(--ink); background:var(--white); line-height:1.6; }
-  .container { max-width:1140px; margin:0 auto; padding:0 24px; }
-  /* NAV */
-  nav { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
-  .nav-inner { display:flex; align-items:center; justify-content:space-between; height:64px; }
-  .brand { display:flex; align-items:center; gap:10px; font-weight:800; color:var(--teal-dark); text-decoration:none; font-size:1.05rem; }
-  .brand svg { width:28px; height:28px; }
-  .nav-links { display:flex; gap:22px; }
-  .nav-links a { color:var(--muted); text-decoration:none; font-size:.92rem; font-weight:600; transition:color .2s; }
-  .nav-links a:hover { color:var(--teal); }
-  .nav-cta { background:var(--teal); color:#fff; padding:8px 18px; border-radius:8px; font-weight:700; font-size:.9rem; text-decoration:none; }
-  .nav-cta:hover { background:var(--teal-dark); }
-  /* HERO */
-  .hero { background:linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 60%, #14b8a6 100%); color:#fff; padding:90px 0 70px; position:relative; overflow:hidden; }
-  .hero::after { content:''; position:absolute; right:-80px; top:-80px; width:320px; height:320px; border-radius:50%; background:rgba(255,255,255,.08); }
-  .hero .container { position:relative; z-index:2; }
-  .hero-badge { display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); padding:6px 14px; border-radius:999px; font-size:.8rem; font-weight:700; letter-spacing:1px; margin-bottom:20px; }
-  .hero h1 { font-size:2.6rem; line-height:1.15; font-weight:800; margin-bottom:18px; max-width:760px; }
-  .hero p { font-size:1.15rem; opacity:.95; max-width:680px; margin-bottom:30px; }
-  .hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
-  .btn { display:inline-block; padding:13px 26px; border-radius:10px; font-weight:700; text-decoration:none; font-size:.98rem; transition:transform .15s, box-shadow .15s; }
-  .btn:hover { transform:translateY(-2px); }
-  .btn-white { background:#fff; color:var(--teal-dark); box-shadow:0 4px 14px rgba(0,0,0,.15); }
-  .btn-outline { border:2px solid rgba(255,255,255,.7); color:#fff; }
-  .hero-stats { display:flex; gap:40px; margin-top:45px; flex-wrap:wrap; }
-  .stat h3 { font-size:1.9rem; font-weight:800; }
-  .stat span { font-size:.85rem; opacity:.85; }
-  /* SECTIONS */
-  section { padding:70px 0; }
-  .section-head { text-align:center; max-width:700px; margin:0 auto 48px; }
-  .section-head .kicker { color:var(--teal); font-weight:700; letter-spacing:2px; text-transform:uppercase; font-size:.82rem; }
-  .section-head h2 { font-size:2rem; font-weight:800; margin-top:10px; }
-  .section-head p { color:var(--muted); margin-top:12px; }
-  .alt { background:var(--light); }
-  /* GRID CARDS */
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
-  .card { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:28px; transition:transform .2s, box-shadow .2s; }
-  .card:hover { transform:translateY(-4px); box-shadow:0 12px 30px rgba(15,118,110,.12); }
-  .card .icon { font-size:1.8rem; margin-bottom:14px; }
-  .card h3 { font-size:1.15rem; font-weight:700; margin-bottom:10px; }
-  .card p { color:var(--muted); font-size:.95rem; }
-  .card ul { list-style:none; margin-top:12px; }
-  .card ul li { padding:4px 0 4px 22px; position:relative; color:var(--muted); font-size:.92rem; }
-  .card ul li::before { content:'✓'; position:absolute; left:0; color:var(--teal); font-weight:700; }
-  /* QS TABLE */
-  .qs-table { width:100%; border-collapse:collapse; background:var(--white); border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(2,6,23,.06); }
-  .qs-table th { background:var(--teal); color:#fff; text-align:left; padding:14px 18px; font-size:.9rem; }
-  .qs-table td { padding:14px 18px; border-bottom:1px solid var(--border); font-size:.95rem; }
-  .qs-table tr:last-child td { border-bottom:none; }
-  .qs-table .w { font-weight:800; color:var(--teal); white-space:nowrap; }
-  /* EVIDENCE LAYERS */
-  .layers { display:grid; gap:16px; }
-  .layer { display:flex; gap:18px; align-items:flex-start; background:var(--white); border:1px solid var(--border); border-radius:12px; padding:22px 26px; }
-  .layer .num { flex-shrink:0; width:44px; height:44px; border-radius:10px; background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem; }
-  .layer .num.gold { background:var(--accent); }
-  .layer h3 { font-size:1.05rem; font-weight:700; }
-  .layer p { color:var(--muted); font-size:.92rem; margin-top:4px; }
-  /* SITEMAP */
-  .sitemap { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
-  .sm-item { background:var(--white); border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:10px; padding:18px 20px; }
-  .sm-item .n { color:var(--teal); font-weight:800; font-size:.8rem; letter-spacing:1px; }
-  .sm-item h3 { font-size:1rem; font-weight:700; margin:4px 0 6px; }
-  .sm-item p { color:var(--muted); font-size:.85rem; }
-  /* PROGRAM PILLARS */
-  .pillars { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
-  .pillar { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:24px; text-align:center; }
-  .pillar .emoji { font-size:2rem; margin-bottom:10px; }
-  .pillar h3 { font-size:1.02rem; font-weight:700; }
-  .pillar p { color:var(--muted); font-size:.88rem; margin-top:6px; }
-  /* USERS */
-  .users { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-  .user { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:24px; }
-  .user h3 { font-size:1.05rem; font-weight:700; }
-  .user p { color:var(--muted); font-size:.9rem; margin:8px 0 12px; }
-  .user a { color:var(--teal); font-weight:600; font-size:.9rem; text-decoration:none; }
-  /* ROADMAP */
-  .roadmap { display:grid; gap:14px; }
-  .rm { display:flex; gap:18px; align-items:flex-start; background:var(--white); border:1px solid var(--border); border-radius:12px; padding:20px 24px; }
-  .rm .week { flex-shrink:0; background:var(--light); border:1px solid var(--border); border-radius:8px; padding:6px 12px; font-weight:800; color:var(--teal); font-size:.8rem; }
-  .rm h3 { font-size:1rem; font-weight:700; }
-  .rm p { color:var(--muted); font-size:.9rem; margin-top:4px; }
-  /* CTA */
-  .cta { background:linear-gradient(135deg, var(--teal-dark), var(--teal)); color:#fff; text-align:center; padding:70px 0; }
-  .cta h2 { font-size:1.9rem; font-weight:800; margin-bottom:14px; }
-  .cta p { opacity:.95; max-width:600px; margin:0 auto 26px; }
-  /* FOOTER */
-  footer { background:var(--ink); color:#94a3b8; padding:40px 0 30px; font-size:.9rem; }
-  .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px; margin-bottom:24px; }
-  .footer-grid h4 { color:#e2e8f0; font-size:.95rem; margin-bottom:12px; }
-  .footer-grid a { display:block; color:#94a3b8; text-decoration:none; padding:3px 0; }
-  .footer-grid a:hover { color:#fff; }
-  .footer-bottom { border-top:1px solid #1e293b; padding-top:20px; text-align:center; font-size:.82rem; }
-  @media (max-width:768px) {
-    .nav-links { display:none; }
-    .hero h1 { font-size:1.9rem; }
-    .hero-stats { gap:24px; }
-    .qs-table { font-size:.85rem; }
-  }
-</style>
-</head>
-<body>
-
-<!-- NAV -->
-<nav>
-  <div class="container nav-inner">
-    <a class="brand" href="#">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-      Petroleum Engineering <span style="font-weight:400;color:var(--muted)">at UD-DUT</span>
-    </a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#programme">Programme</a>
-      <a href="#research">Research</a>
-      <a href="#evidence">Evidence</a>
-      <a href="#sitemap">Sitemap</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a class="nav-cta" href="#contact">Partner with us</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="container">
-    <span class="hero-badge">ENGINEERING — PETROLEUM · QS WORLD UNIVERSITY RANKINGS BY SUBJECT</span>
-    <h1>Petroleum Engineering at UD–DUT</h1>
-    <p>Process / downstream engineering, refining &amp; gas processing, equipment design, simulation, safety, integrity, hydrogen and sustainable energy — within the official ecosystem of the University of Danang – University of Science and Technology.</p>
-    <div class="hero-actions">
-      <a class="btn btn-white" href="#programme">Explore the programme</a>
-      <a class="btn btn-outline" href="#research">See research &amp; publications</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><h3>QS 151–175</h3><span>Subject ranking (by subject)</span></div>
-      <div class="stat"><h3>6</h3><span>Programme pillars</span></div>
-      <div class="stat"><h3>5</h3><span>Evidence layers</span></div>
-      <div class="stat"><h3>10</h3><span>Week roadmap</span></div>
-    </div>
-  </div>
-</header>
-
-<!-- ABOUT / ROLE -->
-<section id="about">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Why this website</span>
-      <h2>The role of the website</h2>
-      <p>A website must do more than introduce the discipline — it turns content into verifiable evidence and builds international reputation.</p>
-    </div>
-    <div class="grid">
-      <div class="card"><div class="icon">📚</div><h3>Official source</h3><p>Easy to find, easy to verify, always up to date — hosted in the official UD–DUT ecosystem.</p></div>
-      <div class="card"><div class="icon">🧪</div><h3>Content as evidence</h3><p>Demonstrates academic reputation, employer recognition, research output and international collaboration.</p></div>
-      <div class="card"><div class="icon">⚙️</div><h3>Integrated architecture</h3><p>SEO, UX, accessibility and data processes live inside one coherent system.</p></div>
-      <div class="card"><div class="icon">🎯</div><h3>QS support</h3><p>Strengthens online reputation, attracts international students and supports the QS ranking position.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- QS INDICATORS -->
-<section class="alt" id="qs">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">QS by subject</span>
-      <h2>The 5 QS indicators the website must make visible</h2>
-      <p>Indicators and weightings per source documentation — to be verified and updated periodically.</p>
-    </div>
-    <table class="qs-table">
-      <thead><tr><th>Indicator</th><th>Weight</th><th>What the website should show</th></tr></thead>
-      <tbody>
-        <tr><td>Academic Reputation</td><td class="w">40%</td><td>The reputation of the University of Danang within the petroleum academic community.</td></tr>
-        <tr><td>Employer Reputation</td><td class="w">30%</td><td>How highly employers rate the quality of our graduates and training.</td></tr>
-        <tr><td>Citations per Paper</td><td class="w">15%</td><td>Average citations per publication, baseline data from Scopus.</td></tr>
-        <tr><td>H-index</td><td class="w">15%</td><td>Combined influence of the group and faculty through publications and citations.</td></tr>
-        <tr><td>International Research Network</td><td class="w">—</td><td>Diversity and depth of international research collaboration.</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- PROGRAMME PILLARS -->
-<section id="programme">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Programme positioning</span>
-      <h2>What makes UD–DUT different</h2>
-      <p>Training petroleum technology engineers focused on process — equipment — operations, across six pillars.</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar"><div class="emoji">🏭</div><h3>Process Design &amp; Equipment</h3><p>Equipment sizing, piping, process design.</p></div>
-      <div class="pillar"><div class="emoji">🛢️</div><h3>Refining, Petrochemicals, Gas</h3><p>Operations, troubleshooting, utilities, plant operation.</p></div>
-      <div class="pillar"><div class="emoji">💻</div><h3>Simulation &amp; Optimisation</h3><p>Simulation, control, optimisation.</p></div>
-      <div class="pillar"><div class="emoji">🔧</div><h3>Piping, Corrosion &amp; Integrity</h3><p>Piping, corrosion protection, asset integrity.</p></div>
-      <div class="pillar"><div class="emoji">🦺</div><h3>HSE &amp; Process Safety</h3><p>Risk assessment, safe design and operation.</p></div>
-      <div class="pillar"><div class="emoji">💧</div><h3>Hydrogen &amp; Renewable Energy</h3><p>Low-carbon fuels and sustainable systems.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- EVIDENCE LAYERS -->
-<section class="alt" id="evidence">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Evidence system</span>
-      <h2>Five content layers of verified evidence</h2>
-      <p>Each capability is tied to faculty, courses, projects, publications, equipment or partners that can be verified.</p>
-    </div>
-    <div class="layers">
-      <div class="layer"><div class="num">5</div><div><h3>Social Impact</h3><p>Achievements · students · alumni · graduate outcomes.</p></div></div>
-      <div class="layer"><div class="num">4</div><div><h3>Research Results</h3><p>Publications · DOI · citations · H-index · research stories.</p></div></div>
-      <div class="layer"><div class="num">3</div><div><h3>Industry Network</h3><p>Internship · capstone · advisory board · employer evidence.</p></div></div>
-      <div class="layer"><div class="num">2</div><div><h3>Academic Network</h3><p>Partners · joint projects · co-authorship · exchange · seminars.</p></div></div>
-      <div class="layer"><div class="num gold">1</div><div><h3>Foundation of Reputation</h3><p>Introduction · programme · faculty · quality &amp; recognition.</p></div></div>
-      <div class="layer"><div class="num gold">+</div><div><h3>Accessibility Support Layer</h3><p>SEO · metadata · structured data · canonical URL · accessibility · analytics.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- RESEARCH -->
-<section id="research">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Research &amp; innovation</span>
-      <h2>Turning research into evidence</h2>
-      <p>Direct impact on Citations per Paper, H-index and Academic Reputation.</p>
-    </div>
-    <div class="grid">
-      <div class="card"><div class="icon">📄</div><h3>Publications</h3><p>ISI/Scopus papers, international conferences, monographs and research groups (production, petrochemicals).</p></div>
-      <div class="card"><div class="icon">🔗</div><h3>Verified links</h3><p>DOI, published PDFs, ORCID, Google Scholar, Scopus and citation counts per publication or group total.</p></div>
-      <div class="card"><div class="icon">📈</div><h3>Trends</h3><p>Number of papers per year and citation trends presented in charts with up-to-date data.</p></div>
-      <div class="card"><div class="icon">🏅</div><h3>H-index</h3><p>Group H-index where computable; otherwise H-index of leading faculty with verified links.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SITEMAP -->
-<section class="alt" id="sitemap">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Information architecture</span>
-      <h2>Proposed sitemap — eight content clusters</h2>
-      <p>Each section uses clear H2/H3 headings, 3–5 focused sentences and verifiable evidence.</p>
-    </div>
-    <div class="sitemap">
-      <div class="sm-item"><span class="n">01</span><h3>About</h3><p>Overview · History · Quality &amp; Recognition · Annual Facts</p></div>
-      <div class="sm-item"><span class="n">02</span><h3>Study</h3><p>Programme · Curriculum · Careers · Internship · Capstone</p></div>
-      <div class="sm-item"><span class="n">03</span><h3>Research &amp; Innovation</h3><p>Themes · Projects · Publications · Labs · Services</p></div>
-      <div class="sm-item"><span class="n">04</span><h3>People</h3><p>Faculty · Researchers · Visiting · Industry Experts</p></div>
-      <div class="sm-item"><span class="n">05</span><h3>Global &amp; Industry</h3><p>Academic partners · Industry · Exchange · Advisory Board</p></div>
-      <div class="sm-item"><span class="n">06</span><h3>Students &amp; Alumni</h3><p>Field trips · Competitions · Stories · Employer perspectives</p></div>
-      <div class="sm-item"><span class="n">07</span><h3>News &amp; Events</h3><p>Research news · Seminars · Calls · Newsletter</p></div>
-      <div class="sm-item"><span class="n">08</span><h3>Data &amp; Impact / Contact</h3><p>Verified indicators · Downloads · Inquiry form · Privacy</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- USERS -->
-<section id="users">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Audiences</span>
-      <h2>Who the website serves</h2>
-      <p>Users find evidence and a next action within 2–3 clicks.</p>
-    </div>
-    <div class="users">
-      <div class="user"><h3>🎓 Scholars &amp; research groups</h3><p>Find experts, publications, equipment and shared topics.</p><a href="#">Explore research →</a></div>
-      <div class="user"><h3>🌍 International universities</h3><p>Assess capability for exchange, joint courses, visiting, MoU.</p><a href="#">Partner with us →</a></div>
-      <div class="user"><h3>🏢 Companies &amp; employers</h3><p>Find student skills, internships, capstone, consulting and R&amp;D.</p><a href="#">Offer an internship →</a></div>
-      <div class="user"><h3>🎒 Students &amp; alumni</h3><p>Understand the programme, careers, experiences and contribution.</p><a href="#">Study with us →</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- ROADMAP -->
-<section class="alt" id="roadmap">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Timeline</span>
-      <h2>10-week implementation roadmap</h2>
-      <p>Build infrastructure, content templates and data in parallel.</p>
-    </div>
-    <div class="roadmap">
-      <div class="rm"><span class="week">WEEK 1</span><div><h3>Design idea</h3><p>URL · naming · sponsor · Product Owner · CMS — decision memo.</p></div></div>
-      <div class="rm"><span class="week">W2–3</span><div><h3>Content inventory</h3><p>Review programme · faculty · publications · projects · partners — inventory + redirect map.</p></div></div>
-      <div class="rm"><span class="week">WEEK 4</span><div><h3>Design system</h3><p>Header · components · homepage · profile · research · partner — approved prototype.</p></div></div>
-      <div class="rm"><span class="week">W5–6</span><div><h3>MVP build</h3><p>Home · About · Study · Research · People · Global &amp; Industry · Contact — MVP 8–12 pages.</p></div></div>
-      <div class="rm"><span class="week">W7–8</span><div><h3>Populate &amp; QA</h3><p>English · fact check · accessibility · security · redirects · analytics — beta issue log.</p></div></div>
-      <div class="rm"><span class="week">W9–10</span><div><h3>Soft launch → Launch</h3><p>User testing · partner links · sitemap · dashboard · SOP handover — website + SOP.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta" id="contact">
-  <div class="container">
-    <h2>Let's build this together</h2>
-    <p>Product Owner: Phan Thanh Sơn. Hosted in the official UD–DUT ecosystem at en.dut.udn.vn/petroleum-engineering/. Reach out to explore research, partnership, internships or study opportunities.</p>
-    <div class="hero-actions" style="justify-content:center">
-      <a class="btn btn-white" href="#">Contact the coordinator</a>
-      <a class="btn btn-outline" href="#">Propose a joint project</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>Petroleum Engineering at UD–DUT</h4>
-        <p>University of Science and Technology, University of Danang. Process engineering, refining &amp; gas processing, equipment design, simulation, safety, integrity, hydrogen and sustainable energy.</p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="#about">About</a>
-        <a href="#programme">Programme</a>
-        <a href="#research">Research</a>
-        <a href="#evidence">Evidence</a>
-      </div>
-      <div>
-        <h4>Partner</h4>
-        <a href="#contact">Partner with us</a>
-        <a href="#contact">Offer an internship</a>
-        <a href="#contact">Join advisory board</a>
-      </div>
-      <div>
-        <h4>Canonical</h4>
-        <p>en.dut.udn.vn/petroleum-engineering/</p>
-        <p>University of Danang — University of Science and Technology</p>
-      </div>
-    </div>
-    <div class="footer-bottom">© 2026 Petroleum Engineering at UD–DUT · University of Danang, University of Science and Technology · Demo microsite</div>
-  </div>
-</footer>
-
-</body>
-</html>
+:root{--bg:#f6f8f9;--surf:#fff;--ink:#12283a;--mute:#53687a;--navy:#0b2a43;--navt:#fff;--teal:#0e8f9b;--org:#e0771a;--line:#d5dee5;--ok:#1d7a4d;--warn:#9a5b00;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1722;--surf:#10222f;--ink:#e6eef4;--mute:#9db1c0;--navy:#071521;--teal:#3cc3cf;--org:#f59a45;--line:#24394a;--ok:#5fd29a;--warn:#f0b35a}}
+:root[data-theme="dark"]{--bg:#0a1722;--surf:#10222f;--ink:#e6eef4;--mute:#9db1c0;--navy:#071521;--teal:#3cc3cf;--org:#f59a45;--line:#24394a;--ok:#5fd29a;--warn:#f0b35a}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;margin:0 0 .5em;color:var(--ink)}
+h1{font-size:clamp(2rem,5vw,3.2rem)}h2{font-size:1.6rem}h3{font-size:1.1rem}
+a{color:var(--teal)}:focus-visible{outline:3px solid var(--org);outline-offset:2px}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+.top{background:var(--navy);color:#fff;font-size:13px;padding:6px 0}.top .w{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header.h{background:var(--surf);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.hr{display:flex;align-items:center;gap:14px;padding:12px 0;flex-wrap:wrap}
+.logo{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:700 12px Georgia,serif}
+.brand{font:700 1.15rem Georgia,serif;color:var(--ink);text-decoration:none}.brand small{display:block;font:400 12px system-ui;color:var(--mute)}
+.sp{flex:1}.btn{display:inline-block;padding:9px 16px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--navy);color:var(--ink);background:transparent;cursor:pointer;font-size:15px}
+.btn.p{background:var(--org);border-color:var(--org);color:#1a0f00}.btn.t{background:var(--teal);border-color:var(--teal);color:#021b1e}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:2px 18px;margin:0;padding:0 0 10px}
+nav a{color:var(--mute);text-decoration:none;font-weight:600;font-size:14px;padding:4px 0;border-bottom:3px solid transparent}
+nav a[aria-current]{color:var(--ink);border-color:var(--org)}
+.hero{background:var(--navy);color:#fff;padding:56px 0}.hero h1{color:#fff;max-width:16em}.hero p{max-width:40em;color:#c8d8e4;font-size:1.1rem}
+.hero .btn{border-color:#fff;color:#fff}.hero .btn.p{border-color:var(--org);color:#1a0f00}
+.ledger{background:var(--surf);border:1px solid var(--line);border-radius:8px;margin-top:-1px}
+.ledger .row{display:grid;grid-template-columns:1.3fr 1fr auto;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);align-items:center;font-size:14px}
+.ledger .row:last-child{border:0}.ledger b{font-weight:600}
+.tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}.tag.ok{color:var(--ok)}.tag.tbv{color:var(--warn)}
+section.s{padding:40px 0}.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--surf);border:1px solid var(--line);border-left:5px solid var(--teal);padding:16px;border-radius:6px}
+.card:nth-child(2n){border-left-color:var(--org)}.card p{margin:.3em 0 0;color:var(--mute);font-size:14px}
+.who{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.who button{padding:8px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surf);color:var(--ink);cursor:pointer;font:600 14px system-ui}
+.who button[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+table{width:100%;border-collapse:collapse;background:var(--surf);font-size:14px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--mute);font-size:13px}
+.sc{overflow-x:auto}.bar{display:flex;align-items:flex-end;gap:10px;height:120px;margin:12px 0}.bar i{flex:1;background:var(--teal);border-radius:3px 3px 0 0;position:relative}.bar i span{position:absolute;bottom:-20px;left:0;right:0;text-align:center;font:12px system-ui;color:var(--mute)}
+.note{background:var(--surf);border:1px dashed var(--org);padding:10px 14px;border-radius:6px;font-size:13px;color:var(--mute);margin:16px 0}
+input,select,textarea{width:100%;padding:9px;border:1px solid var(--line);border-radius:6px;background:var(--surf);color:var(--ink);font:inherit}label{font-weight:600;font-size:14px;display:block;margin:12px 0 4px}
+.fl{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.fl>*{flex:1;min-width:160px}
+footer{background:var(--navy);color:#c8d8e4;padding:28px 0;font-size:14px;margin-top:40px}footer a{color:#fff}
+@media(max-width:640px){.ledger .row{grid-template-columns:1fr auto}.ledger .row span:nth-child(2){grid-column:1/2;color:var(--mute)}}
+@media(prefers-reduced-motion:no-preference){main{animation:in .3s ease}@keyframes in{from{opacity:.4}to{opacity:1}}}
+</style></head><body>
+<div class="top"><div class="w"><span>University of Da Nang | University of Science and Technology</span><span>English · Tiếng Việt (planned)</span></div></div>
+<header class="h"><div class="w"><div class="hr"><div class="logo" aria-hidden="true">DUT</div>
+<a class="brand" href="#/">Petroleum Engineering at UD–DUT<small>Faculty of Chemical, Environment and Life Sciences</small></a><span class="sp"></span>
+<a class="btn" href="#/contact">Contact</a><a class="btn p" href="#/global">Partner with us</a></div>
+<nav aria-label="Main"><ul id="nav"></ul></nav></div></header>
+<main id="app" tabindex="-1"></main>
+<footer><div class="w">Demo for approval review · all names, figures and partners are <b>sample data</b> pending verification by Content Owners.<br>Planned canonical URL: <a href="#/">en.dut.udn.vn/petroleum-engineering/</a> · petroleum@dut.udn.vn (placeholder) · Privacy</div></footer>
+<script>
+const D={
+fac:[["Prof. A. Nguyen","Process design & simulation","Process","A-0001","14"],["Assoc. Prof. B. Tran","Refining & gas processing","Refining","A-0002","11"],["Dr. C. Le","Corrosion & asset integrity","Integrity","A-0003","9"],["Dr. D. Pham","Process safety & risk","HSE","A-0004","8"],["Dr. E. Vo","Hydrogen & low-carbon fuels","Hydrogen","A-0005","10"],["Dr. F. Hoang","Process control & optimisation","Simulation","A-0006","7"],["Dr. G. Dang","Piping & equipment sizing","Process","A-0007","6"],["Dr. H. Bui","Catalysis for petrochemicals","Refining","A-0008","9"]],
+pub:[["Dynamic simulation of a gas dehydration unit",2021,"Simulation","10.0000/sample.001",18],["Corrosion rates in sour-service piping",2021,"Integrity","10.0000/sample.002",12],["Hydrogen blending in gas networks",2022,"Hydrogen","10.0000/sample.003",25],["Bow-tie risk analysis for LPG storage",2022,"HSE","10.0000/sample.004",9],["Heat-exchanger network retrofit",2022,"Process","10.0000/sample.005",14],["Zeolite catalysts for light-olefin yield",2023,"Refining","10.0000/sample.006",21],["Surrogate models for column optimisation",2023,"Simulation","10.0000/sample.007",7],["Inhibitor selection for pipeline coatings",2023,"Integrity","10.0000/sample.008",6],["Green hydrogen supply for refineries",2024,"Hydrogen","10.0000/sample.009",11],["Layer-of-protection analysis in practice",2024,"HSE","10.0000/sample.010",4],["Compressor selection under load swings",2024,"Process","10.0000/sample.011",3],["Digital twin of a distillation train",2024,"Simulation","10.0000/sample.012",5]],
+par:[["Overseas university A","Academic","Joint course","MoU 2023"],["Overseas university B","Academic","Co-authored paper","Paper 2024"],["Research institute C","Academic","Student exchange","MoA 2022"],["Refinery operator D","Industry","Internship programme","Agreement 2024"],["Engineering contractor E","Industry","Capstone sponsor","Letter 2023"],["Energy company F","Industry","Advisory board seat","Charter 2024"]],
+ind:[["Programme established","1995","Faculty records","Jan 2026",1],["QS by Subject rank band","101–150 or 151–175","Conflicting in source deck",0,0],["Faculty profiles with ORCID","8 of 8 (sample)","ORCID registry","Nov 2026",1],["Publications listed (target 100)","12 (sample)","Scopus / DOI","Nov 2026",1],["International partners (target 10–15)","6 (sample)","MoU archive","Nov 2026",1]]
+};
+const P=[["","Home"],["about","About"],["study","Study"],["research","Research"],["people","People"],["global","Global & Industry"],["impact","Data & Impact"],["contact","Contact"]];
+const $=s=>document.querySelector(s),tg=(v,t)=>`<span class="tag ${v?'ok':'tbv'}">${t||(v?'Verified':'To be verified')}</span>`;
+const cap=[["Process & equipment design","Equipment sizing, piping, process design."],["Refining, gas & plant operations","Operate and troubleshoot industrial units."],["Simulation & optimisation","Model, control and improve plant performance."],["Piping, corrosion & integrity","Transport systems, corrosion protection."],["HSE & process safety","Risk assessment, safe design and operation."],["Hydrogen & renewable energy","Low-carbon fuels and sustainable systems."]];
+const cards=a=>`<div class="grid">${a.map(c=>`<div class="card"><h3>${c[0]}</h3><p>${c[1]}</p></div>`).join("")}</div>`;
+const R={
+"":()=>`<div class="hero"><div class="w"><h1>Designing safe, efficient and future-ready petroleum processes.</h1><p>An engineering programme for process and equipment design, refining and gas operations, simulation, asset integrity, HSE, hydrogen and renewable energy.</p><a class="btn p" href="#/study">Explore the programme</a> <a class="btn" href="#/people">Meet our experts</a> <a class="btn" href="#/global">Partner with us</a></div></div>
+<section class="s"><div class="w"><h2>What you can check, not just read</h2><p>Every figure below carries a source and a review date. Anything unconfirmed says so.</p><div class="ledger">${D.ind.map(r=>`<div class="row"><b>${r[0]}</b><span>${r[1]} · ${r[2]}${r[3]?' · reviewed '+r[3]:''}</span>${tg(r[4])}</div>`).join("")}</div></div></section>
+<section class="s"><div class="w"><h2>What our engineers learn</h2>${cards(cap)}</div></section>
+<section class="s"><div class="w"><h2>I am a…</h2><div class="who" id="who" role="group" aria-label="Choose your role"></div><div class="note" id="wr" aria-live="polite"></div></div></section>`,
+about:()=>`<section class="s"><div class="w"><h1>About the programme</h1><p>Petroleum Engineering at UD–DUT trains engineers in the process, equipment and operations side of the energy industry: refining and gas processing, simulation, safety and integrity, and hydrogen.</p><h2>Quality & recognition</h2><div class="sc"><table><tr><th>Item</th><th>Detail</th><th>Status</th></tr><tr><td>QS World University Rankings by Subject</td><td>Rank band to be confirmed with latest QS release</td><td>${tg(0)}</td></tr><tr><td>Programme accreditation (e.g. AUN-QA)</td><td>Add if held</td><td>${tg(0)}</td></tr></table></div></div></section>`,
+study:()=>`<section class="s"><div class="w"><h1>Study with us</h1>${cards(cap)}<h2 style="margin-top:32px">From classroom to industry</h2><p>Laboratory → field visits → internship → capstone, each linked to a partner or project on the Global & Industry page.</p><p><b>Career pathways:</b> process engineer, operations engineer, HSE engineer, integrity engineer, energy engineer.</p></div></section>`,
+research:()=>{const y=[2021,2022,2023,2024],n=y.map(v=>D.pub.filter(p=>p[1]==v).length);return`<section class="s"><div class="w"><h1>Research & innovation</h1><p>Themes: simulation, integrity, process safety, hydrogen and refining catalysis.</p><h2>Publications per year</h2><div class="bar" role="img" aria-label="Publications per year: ${y.map((v,i)=>v+' '+n[i]).join(', ')}">${n.map((v,i)=>`<i style="height:${v*28}px"><span>${y[i]} (${v})</span></i>`).join("")}</div><div style="height:24px"></div>
+<div class="fl"><div><label for="ft">Theme</label><select id="ft"><option value="">All themes</option>${[...new Set(D.pub.map(p=>p[2]))].map(t=>`<option>${t}</option>`).join("")}</select></div><div><label for="fy">Year</label><select id="fy"><option value="">All years</option>${y.map(v=>`<option>${v}</option>`).join("")}</select></div></div>
+<div class="sc"><table><thead><tr><th>Title</th><th>Year</th><th>Theme</th><th>DOI</th><th>Cited</th></tr></thead><tbody id="pt"></tbody></table></div><div class="note">Sample records. In production each row syncs from DOI / Scopus / ORCID and shows its last review date.</div></div></section>`},
+people:()=>`<section class="s"><div class="w"><h1>People</h1><div class="grid">${D.fac.map(f=>`<div class="card"><h3>${f[0]}</h3><p>${f[1]}</p><p>ORCID ${f[3]} · h-index ${f[4]} ${tg(0,'Sample')}</p></div>`).join("")}</div><div class="note">Profiles will link to university page, ORCID, Scopus and Google Scholar.</div></div></section>`,
+global:()=>`<section class="s"><div class="w"><h1>Global & industry</h1><p>Every partner links to evidence, not just a logo.</p><div class="sc"><table><tr><th>Partner</th><th>Type</th><th>Collaboration</th><th>Evidence</th></tr>${D.par.map(p=>`<tr><td>${p[0]}</td><td>${p[1]}</td><td>${p[2]}</td><td>${p[3]} ${tg(0,'Sample')}</td></tr>`).join("")}</table></div><h2 style="margin-top:28px">Ways to work with us</h2>${cards([["Propose a joint project","Research, joint course, visiting."],["Offer an internship","Placements and capstone topics."],["Sponsor or join the advisory board","Shape skills and curriculum."]])}</div></section>`,
+impact:()=>`<section class="s"><div class="w"><h1>Data & impact</h1><div class="ledger">${D.ind.map(r=>`<div class="row"><b>${r[0]}</b><span>${r[1]} · ${r[2]}</span>${tg(r[4])}</div>`).join("")}</div><div class="note">Reputation scores are earned, not claimed. This page publishes verifiable evidence and invites collaboration. It does not ask anyone to respond to a survey in a particular way.</div></div></section>`,
+contact:()=>`<section class="s"><div class="w" style="max-width:640px"><h1>Contact</h1><div id="cf"><label for="n">Name</label><input id="n" autocomplete="name"><label for="e">Email</label><input id="e" type="email" autocomplete="email"><label for="t">I want to</label><select id="t"><option>Propose a joint project</option><option>Offer an internship</option><option>Ask about the programme</option><option>Find an expert</option></select><label for="m">Message</label><textarea id="m" rows="4"></textarea><p><button class="btn p" id="sb">Send inquiry</button></p><p id="st" role="status"></p></div></div></section>`
+};
+const who={"Researcher":["Explore research","#/research","Find experts, publications and equipment."],"University partner":["Propose a joint project","#/global","See partner evidence and exchange options."],"Employer":["Offer an internship","#/global","Internships, capstones and advisory roles."],"Student or alumnus":["Study with us","#/study","Programme facts and career pathways."]};
+function render(){const h=(location.hash.replace(/^#\/?/,"")||"");const k=R[h]?h:"";$("#nav").innerHTML=P.slice(1).map(p=>`<li><a href="#/${p[0]}"${p[0]==k?' aria-current="page"':''}>${p[1]}</a></li>`).join("");
+$("#app").innerHTML=R[k]();document.title=(k?P.find(p=>p[0]==k)[1]+" | ":"")+"Petroleum Engineering at UD–DUT (demo)";window.scrollTo(0,0);
+if(k==""){const w=$("#who"),r=$("#wr");const set=n=>{[...w.children].forEach(b=>b.setAttribute("aria-pressed",b.textContent==n));const c=who[n];r.innerHTML=`<b>${c[0]}</b> — ${c[2]} <a href="${c[1]}">Go there</a>`};Object.keys(who).forEach(n=>{const b=document.createElement("button");b.textContent=n;b.onclick=()=>set(n);w.appendChild(b)});set("Researcher")}
+if(k=="research"){const f=()=>{const t=$("#ft").value,y=$("#fy").value,l=D.pub.filter(p=>(!t||p[2]==t)&&(!y||p[1]==y));$("#pt").innerHTML=l.length?l.map(p=>`<tr><td>${p[0]}</td><td>${p[1]}</td><td>${p[2]}</td><td>${p[3]}</td><td>${p[4]}</td></tr>`).join(""):`<tr><td colspan="5">No publications match. Clear a filter to see all.</td></tr>`};$("#ft").onchange=$("#fy").onchange=f;f()}
+if(k=="contact")$("#sb").onclick=()=>{const ok=$("#n").value.trim()&&/\S+@\S+\.\S+/.test($("#e").value);$("#st").textContent=ok?"Thank you. This is a demo form, so nothing was sent.":"Enter your name and a valid email address."}}
+addEventListener("hashchange",render);render();
+</script></body></html>
