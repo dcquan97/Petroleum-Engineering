@@ -5,7 +5,7 @@
 <meta name="description" content="Demo microsite: process, equipment and operations-focused petroleum engineering at the University of Da Nang – University of Science and Technology.">
 <link rel="canonical" href="https://en.dut.udn.vn/petroleum-engineering/">
 <style>
-:root{--bg:#f6f8f9;--surf:#fff;--ink:#12283a;--mute:#53687a;--navy:#0b2a43;--navt:#fff;--teal:#0e8f9b;--org:#e0771a;--line:#d5dee5;--ok:#1d7a4d;--warn:#9a5b00;
+:root{--bg:#faf6ef;--surf:#fff;--ink:#12283a;--mute:#53687a;--navy:#0b2a43;--navt:#fff;--teal:#0e8f9b;--org:#e0771a;--line:#e4dccf;--ok:#1d7a4d;--warn:#9a5b00;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1722;--surf:#10222f;--ink:#e6eef4;--mute:#9db1c0;--navy:#071521;--teal:#3cc3cf;--org:#f59a45;--line:#24394a;--ok:#5fd29a;--warn:#f0b35a}}
 :root[data-theme="dark"]{--bg:#0a1722;--surf:#10222f;--ink:#e6eef4;--mute:#9db1c0;--navy:#071521;--teal:#3cc3cf;--org:#f59a45;--line:#24394a;--ok:#5fd29a;--warn:#f0b35a}
@@ -49,18 +49,29 @@ header.h nav ul{justify-content:space-between}
 .eng{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(165px,1fr))}.eng .c{background:color-mix(in srgb,var(--c) 14%,var(--surf));border-left:5px solid var(--c);border-radius:6px;padding:14px}.eng svg{width:40px;height:40px;background:var(--surf);border-radius:50%;padding:8px;stroke:var(--ink);fill:none;stroke-width:2}.eng h3{margin:8px 0 4px;font-family:system-ui,sans-serif;font-size:15px}.eng p{margin:0;font-size:13px;color:var(--mute)}
 .two{display:grid;gap:16px;grid-template-columns:1.5fr 1fr;margin-top:20px}.cr{border:2px solid var(--teal);border-radius:8px;padding:18px;background:color-mix(in srgb,var(--teal) 10%,var(--surf))}.cr h2,.rg h2{font-size:1.1rem;font-family:system-ui,sans-serif}.steps{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0;padding:0;list-style:none}.steps li{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px}.steps i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font:700 14px system-ui}
 .rg{background:var(--navy);color:#fff;border-radius:8px;padding:18px;position:relative;overflow:hidden}.rg h2{color:#fff}.rg p{font-size:13px;color:#c8d8e4;max-width:75%}.rg:after{content:"";position:absolute;right:-10px;bottom:20px;width:90px;height:100px;background:var(--org);clip-path:polygon(0 0,100% 50%,0 100%)}.rg .btn{position:relative;z-index:1;color:#fff;border-color:#fff}.rg .btn.t{border-color:var(--teal);color:#021b1e}.rg .btn.wh{background:#fff;color:#0b2a43}
+.cta{display:none}.mo{display:none}#mb{display:none}#mb[aria-expanded=true]{background:var(--navy);color:#fff}
 main{flex:1 0 auto}footer{flex-shrink:0}
 .fnav{display:flex;gap:24px;flex-wrap:wrap;font-weight:700;margin-bottom:10px}
-@media(max-width:760px){.hg,.two{grid-template-columns:1fr}.rg p{max-width:100%}}
+@media(max-width:760px){.hg,.two{grid-template-columns:1fr}.rg p{max-width:100%}
+.hr{gap:10px;padding:8px 0;flex-wrap:nowrap}.brand{font-size:.95rem;flex:1 1 auto;min-width:0}.brand small{display:none}.logo{flex:none;width:36px;height:36px}.hr>a.btn,.sp{display:none}.mo{display:list-item}.hr .btn{padding:8px 12px;font-size:14px}
+nav ul{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;gap:20px;padding-bottom:6px;-webkit-overflow-scrolling:touch}nav li{flex:none}nav a{white-space:nowrap;display:block;padding:8px 0}
+.top .w{font-size:12px}.hero2{padding:24px 0}.hero2 .btn{margin:0 6px 8px 0}.rg:after{width:56px;height:64px}.stats div{border-right:0;border-bottom:1px solid var(--line)}.eng{grid-template-columns:1fr 1fr}.who button,.btn{min-height:44px}.fnav{gap:14px}#mb{display:block;width:auto;margin:0;flex:none}nav ul{display:none;flex-direction:column;overflow:visible;gap:0;padding-bottom:8px}nav ul.open{display:flex;max-height:65vh;overflow-y:auto}nav a{padding:12px 4px;border-bottom:1px solid var(--line)}nav a[aria-current]{border-bottom-color:var(--org)}
+nav a{font-size:16px}.mo{display:none}section.s{padding:28px 0}.hero2 h1{font-size:1.9rem}.hero2 .btn{display:block;text-align:center;margin:0 0 10px}
+.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(odd){border-right:1px solid var(--line)}.stats div{padding:14px 8px}
+.eng .c,.card,.cr,.rg,.ledger,.note{border-radius:14px}.eng .c{padding:14px 12px}.cr,.rg{padding:20px 16px}
+input,select,textarea{font-size:16px;min-height:44px}.sc{margin:0 -4px}
+.cta{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:8;background:var(--surf);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}.cta .btn{flex:1;text-align:center}footer{padding:28px 0 100px}}
+@media(max-width:380px){.eng{grid-template-columns:1fr}}
 @media(max-width:640px){.ledger .row{grid-template-columns:1fr auto}.ledger .row span:nth-child(2){grid-column:1/2;color:var(--mute)}}
 @media(prefers-reduced-motion:no-preference){main{animation:in .3s ease}@keyframes in{from{opacity:.4}to{opacity:1}}}
 </style></head><body>
 <div class="top"><div class="w"><span>The University of Da Nang | University of Science and Technology</span><details class="iam"><summary>I am / I want</summary><div><a href="#/research">I am a researcher</a><a href="#/global">I represent a university</a><a href="#/global">I am an employer</a><a href="#/study">I am a student or alumnus</a></div></details><span>English · Tiếng Việt (planned)</span></div></div>
 <header class="h"><div class="w"><div class="hr"><div class="logo" aria-hidden="true">DUT</div>
 <a class="brand" href="#/">Petroleum Engineering at UD–DUT<small>Faculty of Chemical, Environment and Life Sciences</small></a><span class="sp"></span>
-<a class="btn" href="#/contact">Contact</a><a class="btn p" href="#/global">Partner with us</a></div>
+<a class="btn" href="#/contact">Contact</a><a class="btn p" href="#/global">Partner with us</a><button class="btn" id="mb" aria-expanded="false" aria-controls="nav">☰ Menu</button></div>
 <nav aria-label="Main"><ul id="nav"></ul></nav></div></header>
 <main id="app" tabindex="-1"></main>
+<div class="cta"><a class="btn" href="#/contact">Contact</a><a class="btn p" href="#/global">Partner with us</a></div>
 <footer><div class="w"><div class="fnav"><a href="#/alumni">Student stories</a><a href="#/news">News & events</a><a href="#/people">Meet our experts</a><a href="#/global">Collaborate with us</a></div>petroleum@dut.udn.vn (placeholder) · Official English microsite concept · V2<br>Demo: names, figures and partners are <b>sample data</b> pending verification.</div></footer>
 <script>
 const D={
@@ -100,9 +111,10 @@ news:()=>`<section class="s"><div class="w"><h1>News & events</h1><p>Seminars, v
 contact:()=>`<section class="s"><div class="w" style="max-width:640px"><h1>Contact</h1><div id="cf"><label for="n">Name</label><input id="n" autocomplete="name"><label for="e">Email</label><input id="e" type="email" autocomplete="email"><label for="t">I want to</label><select id="t"><option>Propose a joint project</option><option>Offer an internship</option><option>Ask about the programme</option><option>Find an expert</option></select><label for="m">Message</label><textarea id="m" rows="4"></textarea><p><button class="btn p" id="sb">Send inquiry</button></p><p id="st" role="status"></p></div></div></section>`
 };
 const who={"Researcher":["Explore research","#/research","Find experts, publications and equipment."],"University partner":["Propose a joint project","#/global","See partner evidence and exchange options."],"Employer":["Offer an internship","#/global","Internships, capstones and advisory roles."],"Student or alumnus":["Study with us","#/study","Programme facts and career pathways."]};
-function render(){const h=(location.hash.replace(/^#\/?/,"")||"");const k=R[h]?h:"";$("#nav").innerHTML=P.slice(1,-1).map(p=>`<li><a href="#/${p[0]}"${p[0]==k?' aria-current="page"':''}>${p[1]}</a></li>`).join("");
+function render(){$("#nav").classList.remove("open");$("#mb").setAttribute("aria-expanded","false");const h=(location.hash.replace(/^#\/?/,"")||"");const k=R[h]?h:"";$("#nav").innerHTML=P.slice(1,-1).map(p=>`<li><a href="#/${p[0]}"${p[0]==k?' aria-current="page"':''}>${p[1]}</a></li>`).join("")+'<li class="mo"><a href="#/contact">Contact</a></li><li class="mo"><a href="#/global">Partner with us</a></li>';
 $("#app").innerHTML=R[k]();document.title=(k?P.find(p=>p[0]==k)[1]+" | ":"")+"Petroleum Engineering at UD–DUT (demo)";window.scrollTo(0,0);
 if(k=="research"){const f=()=>{const t=$("#ft").value,y=$("#fy").value,l=D.pub.filter(p=>(!t||p[2]==t)&&(!y||p[1]==y));$("#pt").innerHTML=l.length?l.map(p=>`<tr><td>${p[0]}</td><td>${p[1]}</td><td>${p[2]}</td><td>${p[3]}</td><td>${p[4]}</td></tr>`).join(""):`<tr><td colspan="5">No publications match. Clear a filter to see all.</td></tr>`};$("#ft").onchange=$("#fy").onchange=f;f()}
 if(k=="contact")$("#sb").onclick=()=>{const ok=$("#n").value.trim()&&/\S+@\S+\.\S+/.test($("#e").value);$("#st").textContent=ok?"Thank you. This is a demo form, so nothing was sent.":"Enter your name and a valid email address."}}
+$("#mb").onclick=()=>{const o=$("#nav").classList.toggle("open");$("#mb").setAttribute("aria-expanded",o)};
 addEventListener("hashchange",render);render();
 </script></body></html>
